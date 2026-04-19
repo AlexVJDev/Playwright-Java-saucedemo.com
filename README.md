@@ -2,7 +2,7 @@
 
 UI automation tests for the demo e-commerce site **[Sauce Demo](https://www.saucedemo.com/)** (Swag Labs). The application intentionally behaves differently per **test user**, which is useful for negative flows, timing, and data assertions.
 
-## Why six users?
+## Six users:
 
 | User | Typical site behavior (for test design) |
 |------|----------------------------------------|
@@ -17,7 +17,7 @@ For accounts that are allowed to log in, the demo password is usually shared: `s
 
 ## Tech stack
 
-- Java 17, Maven
+- Java 21, Maven
 - [Microsoft Playwright](https://playwright.dev/java/) (Java)
 - JUnit 5
 - Allure (reports)
@@ -26,7 +26,7 @@ For accounts that are allowed to log in, the demo password is usually shared: `s
 
 ## Prerequisites
 
-- JDK 17+
+- JDK 21+
 - Maven 3.6+
 
 ## Run tests
