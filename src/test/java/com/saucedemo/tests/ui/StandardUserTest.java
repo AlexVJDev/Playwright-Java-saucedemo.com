@@ -36,7 +36,7 @@ public class StandardUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Login should fail with empty password.")
+    @DisplayName("Login Expected to fail with empty password.")
     void loginFailedNoPassword() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.submitLoginForm(USER_NAME, null);
@@ -45,7 +45,7 @@ public class StandardUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Login should fail with wrong password")
+    @DisplayName("Login Expected to fail with wrong password")
     void loginShouldFailWrongPassword() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.submitLoginForm(USER_NAME, "wrongPassword");
@@ -178,7 +178,7 @@ public class StandardUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Should fail and reveal a bug.) StandardUser. Product name shouldn't have reserved words")
+    @DisplayName("(Expected to fail and reveal a bug.) StandardUser. Product name shouldn't have reserved words")
     void inventoryPageNamesShouldNotHaveReservedWords() {
 
         LoginPage loginPage = new LoginPage(page);
@@ -196,7 +196,7 @@ public class StandardUserTest extends BaseTest {
 
 
     @Test
-    @DisplayName("(Should fail and reveal a bug.) There is a code in the product description")
+    @DisplayName("(Expected to fail and reveal a bug.) There is a code in the product description")
     void inventoryPageDescriptionShouldNotHaveReservedWords() {
 
         LoginPage loginPage = new LoginPage(page);

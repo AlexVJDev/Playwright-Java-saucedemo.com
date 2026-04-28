@@ -61,7 +61,8 @@ public class BaseTest {
     void setup() {
         test = extent.createTest(this.getClass().getSimpleName());
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        //browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
         context = browser.newContext();
         page = context.newPage();
     }

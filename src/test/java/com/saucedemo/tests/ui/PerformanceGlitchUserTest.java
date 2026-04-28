@@ -42,7 +42,7 @@ public class PerformanceGlitchUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Should fail and reveal a bug.) PerformanceGlitchUser: JUnit should get time-out message")
+    @DisplayName("(Expected to fail and reveal a bug.) PerformanceGlitchUser: JUnit should get time-out message")
     void navigationTimeOutTest() {
         assertTimeout(Duration.ofSeconds(10), () -> {
             LoginPage loginPage = new LoginPage(page);

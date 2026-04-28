@@ -1,6 +1,7 @@
 # Playwright — Sauce Demo (Swag Labs)
 
 UI automation tests for the demo e-commerce site **[Sauce Demo](https://www.saucedemo.com/)** (Swag Labs). The application intentionally behaves differently per **test user**, which is useful for negative flows, timing, and data assertions.
+Currently, **13 tests are expected to fail and reveal bugs**.
 
 ## Six users:
 
