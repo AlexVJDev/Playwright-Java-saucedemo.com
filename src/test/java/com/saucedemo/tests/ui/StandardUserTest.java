@@ -8,7 +8,7 @@ import com.saucedemo.config.SauceDemoTestConfig;
 import com.saucedemo.tests.base.BaseTest;
 import com.saucedemo.utils.InventorySortOrderEnum;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestTemplate;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Duration;
@@ -27,7 +27,7 @@ public class StandardUserTest extends BaseTest {
     private static final String USER_NAME = CFG.standardUsername();
     private static final String PASSWORD = CFG.standardPassword();
 
-    @Test
+    @TestTemplate
     @DisplayName("Successful authorization")
     void successfulLoginTest() {
         LoginPage loginPage = new LoginPage(page);
@@ -35,7 +35,7 @@ public class StandardUserTest extends BaseTest {
         assertTrue(page.url().contains("/inventory.html"));
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Login Expected to fail with empty password.")
     void loginFailedNoPassword() {
         LoginPage loginPage = new LoginPage(page);
@@ -44,7 +44,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals("Epic sadface: Password is required", loginPage.getErrorMessage());
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Login Expected to fail with wrong password")
     void loginShouldFailWrongPassword() {
         LoginPage loginPage = new LoginPage(page);
@@ -54,7 +54,7 @@ public class StandardUserTest extends BaseTest {
                 loginPage.getErrorMessage());
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Should work navigation: login -> inventory -> inventoryItem -> inventory and take less than 2 sec.")
     void navigationTest() {
         assertTimeout(Duration.ofSeconds(10), () -> {
@@ -72,7 +72,7 @@ public class StandardUserTest extends BaseTest {
         }, "Navigation took more than 2 seconds!");
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Inventory-page have correct first product")
     void inventoryPageHaveCorrectFirstProduct() {
         LoginPage loginPage = new LoginPage(page);
@@ -83,7 +83,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals(expectedProductList.getFirst(), product);
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Inventory-page should have correct products list")
     void inventoryPageHaveCorrectAllProductList() {
         LoginPage loginPage = new LoginPage(page);
@@ -94,7 +94,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals(expectedProductList, productList);
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Inventory-page should have correct price-list. Items order by name: A to Z")
     void inventoryPageHaveCorrectPriceListOrderByNameAtoZ() {
         LoginPage loginPage = new LoginPage(page);
@@ -111,7 +111,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals(expectedPricesList, pricesList);
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Inventory-page should have correct price-list. Items order by name: Z to A")
     void inventoryPageHaveCorrectPriceListOrderByNameZtoA() {
         LoginPage loginPage = new LoginPage(page);
@@ -128,7 +128,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals(expectedPricesList, pricesList);
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Inventory-page should have correct price-list. Items order by price: Lo to Hi")
     void inventoryPageHaveCorrectPriceListOrderByPriceLoToHi() {
         LoginPage loginPage = new LoginPage(page);
@@ -145,7 +145,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals(expectedPricesList, pricesList);
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Inventory-page should have correct price-list. Items order by price: Hi to Lo")
     void inventoryPageHaveCorrectPriceListOrderByPriceHiToLo() {
         LoginPage loginPage = new LoginPage(page);
@@ -162,7 +162,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals(expectedPricesList, pricesList);
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Inventory-page have correct cart items count")
     void inventoryPageHaveCorrectCartItemsCount() {
         LoginPage loginPage = new LoginPage(page);
@@ -177,7 +177,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals(expectedProductList.size() - 1, inventoryPage.getCartItemCount());
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) StandardUser. Product name shouldn't have reserved words")
     void inventoryPageNamesShouldNotHaveReservedWords() {
 
@@ -195,7 +195,7 @@ public class StandardUserTest extends BaseTest {
     }
 
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) There is a code in the product description")
     void inventoryPageDescriptionShouldNotHaveReservedWords() {
 
@@ -213,7 +213,7 @@ public class StandardUserTest extends BaseTest {
                         + "; actual descriptions: " + matchedWrong);
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Cart-page have correct item-list")
     void cartPageHaveCorrectItemList() {
         LoginPage loginPage = new LoginPage(page);
@@ -239,7 +239,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals(expectedCartItemList, cartItemList);
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Cart-page have correct total-price")
     void cartPageHaveCorrectTotalPrice() {
         LoginPage loginPage = new LoginPage(page);
@@ -258,7 +258,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals(expectedTotalPrice, cartPage.getTotalPrice());
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Cart-page have correct items-count")
     void cartPageHaveCorrectItemsCount() {
         LoginPage loginPage = new LoginPage(page);
@@ -276,7 +276,7 @@ public class StandardUserTest extends BaseTest {
         assertEquals(expectedProductList.size() - 1, cartPage.getCartItemCount());
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("checkout page have expected summery info")
     void checkoutProcessTest() {
         LoginPage loginPage = new LoginPage(page);
@@ -309,7 +309,7 @@ public class StandardUserTest extends BaseTest {
         assertTrue(page.url().contains("/checkout-complete.html"));
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("Final checkout page have correct final message")
     void checkoutSuccessfulMessageTest() {
 

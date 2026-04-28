@@ -7,7 +7,7 @@ import com.saucedemo.pages.InventoryPage;
 import com.saucedemo.pages.LoginPage;
 import com.saucedemo.tests.base.BaseTest;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestTemplate;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ProblemUserTest extends BaseTest {
@@ -16,7 +16,7 @@ public class ProblemUserTest extends BaseTest {
     private static final String USER_NAME = CFG.problemUser();
     private static final String PASSWORD = CFG.standardPassword();
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) ProblemUser. inventory page should have correct image-name")
     void inventoryPageShouldHaveCorrectImageName() {
         LoginPage loginPage = new LoginPage(page);
@@ -30,7 +30,7 @@ public class ProblemUserTest extends BaseTest {
                                 productList.getFirst().getImageName(), expectedProductList.getFirst().getImageName()));
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) ProblemUser. Inventory-page should get correct total items number in the cart")
     void inventoryPageShouldHaveCorrectItemsCount() {
         LoginPage loginPage = new LoginPage(page);
@@ -45,7 +45,7 @@ public class ProblemUserTest extends BaseTest {
                             inventoryPage.getCartItemCount(), expectedProductList.size()));
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) ProblemUser. The product is not removed from the shopping list in inventoryPage")
     void inventoryPageShouldWorkRemoveButton() {
         LoginPage loginPage = new LoginPage(page);
@@ -64,7 +64,7 @@ public class ProblemUserTest extends BaseTest {
                 "problem_user: Remove on inventory Should decrease cart count");
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) ProblemUser. Price on item detail page not match expected catalog price")
     void inventoryItemPageShouldHaveCorrectPrice() {
         LoginPage loginPage = new LoginPage(page);
@@ -81,7 +81,7 @@ public class ProblemUserTest extends BaseTest {
                 "problem_user: price on item detail should match expected catalog price");
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) ProblemUser. Price on item detail page not match expected catalog name")
     void inventoryItemPageShouldHaveCorrectName() {
         LoginPage loginPage = new LoginPage(page);
@@ -98,7 +98,7 @@ public class ProblemUserTest extends BaseTest {
                 "problem_user: Name on item detail page should match expected catalog price");
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) ProblemUser: Add to cart on inventory-item page must increase cart badge")
     void inventoryItemPageShouldWorkRemove() {
         LoginPage loginPage = new LoginPage(page);

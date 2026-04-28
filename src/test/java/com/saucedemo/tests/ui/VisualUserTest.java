@@ -9,7 +9,7 @@ import com.saucedemo.pages.LoginPage;
 import com.saucedemo.tests.base.BaseTest;
 import com.saucedemo.utils.InventorySortOrderEnum;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestTemplate;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
@@ -22,7 +22,7 @@ public class VisualUserTest extends BaseTest {
     private static final String PASSWORD = CFG.standardPassword();
     private static final double BUTTON_IN_CARD_TOLERANCE_PX = 2.0;
 
-    @Test
+    @TestTemplate
     @DisplayName("successful authorization")
     void successfulLoginTest() {
         LoginPage loginPage = new LoginPage(page);
@@ -30,7 +30,7 @@ public class VisualUserTest extends BaseTest {
         assertTrue(page.url().contains("/inventory.html"));
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) Inventory: Add to cart buttons must not overflow product cards horizontally.")
     void inventoryPageAddToCartButtonsFitInsideCards() {
         LoginPage loginPage = new LoginPage(page);
@@ -63,7 +63,7 @@ public class VisualUserTest extends BaseTest {
         }
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) Inventory page should have correct image-name")
     void inventoryPageShouldHaveCorrectImageName() {
         LoginPage loginPage = new LoginPage(page);
@@ -78,7 +78,7 @@ public class VisualUserTest extends BaseTest {
         );
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) Inventory-page should have correct price-list (order by name: A to Z)")
     void inventoryPageShouldHavePriceListOrderByNameAtoZ() {
         LoginPage loginPage = new LoginPage(page);

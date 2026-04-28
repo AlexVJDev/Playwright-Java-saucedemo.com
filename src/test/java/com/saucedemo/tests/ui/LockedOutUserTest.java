@@ -4,7 +4,7 @@ import com.saucedemo.config.SauceDemoTestConfig;
 import com.saucedemo.pages.LoginPage;
 import com.saucedemo.tests.base.BaseTest;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestTemplate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -14,7 +14,7 @@ public class LockedOutUserTest extends BaseTest {
     private static final String USER_NAME = CFG.lockedOutUser();
     private static final String PASSWORD = CFG.standardPassword();
 
-    @Test
+    @TestTemplate
     @DisplayName("Authorization does not work for lockedOutUser")
     void loginFailedUserLocked() {
         LoginPage loginPage = new LoginPage(page);

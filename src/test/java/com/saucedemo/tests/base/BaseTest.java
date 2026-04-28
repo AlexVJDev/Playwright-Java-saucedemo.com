@@ -10,14 +10,15 @@ import com.saucedemo.utils.ProductCsvReader;
 import com.saucedemo.utils.SellSummeryInfoCsvReader;
 
 import java.nio.file.Paths;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import java.net.URISyntaxException;
 import java.util.List;
 
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(BrowserTestInvocationContextProvider.class)
 public class BaseTest {
 
     protected static ExtentReports extent;
@@ -57,25 +58,4 @@ public class BaseTest {
         }
     }
 
-    @BeforeEach
-    void setup() {
-        test = extent.createTest(this.getClass().getSimpleName());
-        playwright = Playwright.create();
-        //browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-        browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
-        context = browser.newContext();
-        page = context.newPage();
-    }
-
-    @AfterEach
-    void tearDown() {
-        if (ScreenshotWatcher.getLastScreenshotPath() != null) {
-            test.addScreenCaptureFromPath(ScreenshotWatcher.getLastScreenshotPath());
-        }
-        page.close();
-        context.close();
-        browser.close();
-        playwright.close();
-        extent.flush();
-    }
 }

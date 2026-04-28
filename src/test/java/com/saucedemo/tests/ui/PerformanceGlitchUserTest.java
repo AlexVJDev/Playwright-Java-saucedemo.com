@@ -6,7 +6,7 @@ import com.saucedemo.pages.InventoryPage;
 import com.saucedemo.pages.LoginPage;
 import com.saucedemo.tests.base.BaseTest;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestTemplate;
 import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -17,7 +17,7 @@ public class PerformanceGlitchUserTest extends BaseTest {
     private static final String USER_NAME = CFG.performanceGlitchUser();
     private static final String PASSWORD = CFG.standardPassword();
 
-    @Test
+    @TestTemplate
     @DisplayName("successful authorization")
     void successfulLoginTest() {
         LoginPage loginPage = new LoginPage(page);
@@ -25,7 +25,7 @@ public class PerformanceGlitchUserTest extends BaseTest {
         assertTrue(page.url().contains("/inventory.html"));
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("PerformanceGlitchUser: Navigation: inventory → товар → inventory ")
     void navigationTest() {
         LoginPage loginPage = new LoginPage(page);
@@ -41,7 +41,7 @@ public class PerformanceGlitchUserTest extends BaseTest {
                 () -> "Expected https://www.saucedemo.com/inventory.html, got: " + page.url());
     }
 
-    @Test
+    @TestTemplate
     @DisplayName("(Expected to fail and uncover a bug.) PerformanceGlitchUser: JUnit should get time-out message")
     void navigationTimeOutTest() {
         assertTimeout(Duration.ofSeconds(10), () -> {
