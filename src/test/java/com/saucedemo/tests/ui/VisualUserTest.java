@@ -31,7 +31,7 @@ public class VisualUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) Inventory: Add to cart buttons must not overflow product cards horizontally.")
+    @DisplayName("(Expected to fail and uncover a bug.) Inventory: Add to cart buttons must not overflow product cards horizontally.")
     void inventoryPageAddToCartButtonsFitInsideCards() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.login(USER_NAME, PASSWORD);
@@ -64,7 +64,7 @@ public class VisualUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) Inventory page should have correct image-name")
+    @DisplayName("(Expected to fail and uncover a bug.) Inventory page should have correct image-name")
     void inventoryPageShouldHaveCorrectImageName() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.login(USER_NAME, PASSWORD);
@@ -79,7 +79,7 @@ public class VisualUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) Inventory-page should have correct price-list (order by name: A to Z)")
+    @DisplayName("(Expected to fail and uncover a bug.) Inventory-page should have correct price-list (order by name: A to Z)")
     void inventoryPageShouldHavePriceListOrderByNameAtoZ() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.login(USER_NAME, PASSWORD);

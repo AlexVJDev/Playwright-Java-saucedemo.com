@@ -24,7 +24,7 @@ public class ErrorUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) InventoryPage should have correct cart items count in cart")
+    @DisplayName("(Expected to fail and uncover a bug.) InventoryPage should have correct cart items count in cart")
     void inventoryPageShouldHaveCorrectCartItemsCount() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.login(USER_NAME, PASSWORD);

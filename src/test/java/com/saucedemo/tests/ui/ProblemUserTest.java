@@ -17,7 +17,7 @@ public class ProblemUserTest extends BaseTest {
     private static final String PASSWORD = CFG.standardPassword();
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) ProblemUser. inventory page should have correct image-name")
+    @DisplayName("(Expected to fail and uncover a bug.) ProblemUser. inventory page should have correct image-name")
     void inventoryPageShouldHaveCorrectImageName() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.login(USER_NAME, PASSWORD);
@@ -31,7 +31,7 @@ public class ProblemUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) ProblemUser. Inventory-page should get correct total items number in the cart")
+    @DisplayName("(Expected to fail and uncover a bug.) ProblemUser. Inventory-page should get correct total items number in the cart")
     void inventoryPageShouldHaveCorrectItemsCount() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.login(USER_NAME, PASSWORD);
@@ -46,7 +46,7 @@ public class ProblemUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) ProblemUser. The product is not removed from the shopping list in inventoryPage")
+    @DisplayName("(Expected to fail and uncover a bug.) ProblemUser. The product is not removed from the shopping list in inventoryPage")
     void inventoryPageShouldWorkRemoveButton() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.login(USER_NAME, PASSWORD);
@@ -65,7 +65,7 @@ public class ProblemUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) ProblemUser. Price on item detail page not match expected catalog price")
+    @DisplayName("(Expected to fail and uncover a bug.) ProblemUser. Price on item detail page not match expected catalog price")
     void inventoryItemPageShouldHaveCorrectPrice() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.login(USER_NAME, PASSWORD);
@@ -82,7 +82,7 @@ public class ProblemUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) ProblemUser. Price on item detail page not match expected catalog name")
+    @DisplayName("(Expected to fail and uncover a bug.) ProblemUser. Price on item detail page not match expected catalog name")
     void inventoryItemPageShouldHaveCorrectName() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.login(USER_NAME, PASSWORD);
@@ -99,7 +99,7 @@ public class ProblemUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) ProblemUser: Add to cart on inventory-item page must increase cart badge")
+    @DisplayName("(Expected to fail and uncover a bug.) ProblemUser: Add to cart on inventory-item page must increase cart badge")
     void inventoryItemPageShouldWorkRemove() {
         LoginPage loginPage = new LoginPage(page);
         loginPage.login(USER_NAME, PASSWORD);

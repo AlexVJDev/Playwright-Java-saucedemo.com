@@ -178,7 +178,7 @@ public class StandardUserTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) StandardUser. Product name shouldn't have reserved words")
+    @DisplayName("(Expected to fail and uncover a bug.) StandardUser. Product name shouldn't have reserved words")
     void inventoryPageNamesShouldNotHaveReservedWords() {
 
         LoginPage loginPage = new LoginPage(page);
@@ -196,7 +196,7 @@ public class StandardUserTest extends BaseTest {
 
 
     @Test
-    @DisplayName("(Expected to fail and reveal a bug.) There is a code in the product description")
+    @DisplayName("(Expected to fail and uncover a bug.) There is a code in the product description")
     void inventoryPageDescriptionShouldNotHaveReservedWords() {
 
         LoginPage loginPage = new LoginPage(page);
