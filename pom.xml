@@ -123,7 +123,7 @@
 				<version>${allure-maven.version}</version>
 				<configuration>
 					<reportVersion>${allure.version}</reportVersion>
-					<resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+					<resultsDirectory>${project.build.directory}/target/allure-results</resultsDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
