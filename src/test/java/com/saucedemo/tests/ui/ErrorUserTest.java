@@ -6,7 +6,7 @@ import com.saucedemo.models.Product;
 import com.saucedemo.pages.InventoryPage;
 import com.saucedemo.pages.LoginPage;
 import com.saucedemo.tests.base.BaseTest;
-import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ErrorUserTest extends BaseTest {
@@ -15,7 +15,7 @@ public class ErrorUserTest extends BaseTest {
     private static final String USER_NAME = CFG.errorUser();
     private static final String PASSWORD = CFG.standardPassword();
 
-    @TestTemplate
+    @Test
     @DisplayName("successful authorization")
     void successfulLoginTest() {
         LoginPage loginPage = new LoginPage(page);
@@ -23,7 +23,7 @@ public class ErrorUserTest extends BaseTest {
         assertTrue(page.url().contains("/inventory.html"));
     }
 
-    @TestTemplate
+    @Test
     @DisplayName("(Expected to fail and uncover a bug.) InventoryPage should have correct cart items count in cart")
     void inventoryPageShouldHaveCorrectCartItemsCount() {
         LoginPage loginPage = new LoginPage(page);

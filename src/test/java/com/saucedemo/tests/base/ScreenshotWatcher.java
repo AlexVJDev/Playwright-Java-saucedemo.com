@@ -1,7 +1,6 @@
 package com.saucedemo.tests.base;
 
 import com.microsoft.playwright.Page;
-import lombok.Getter;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 import java.nio.file.Path;
@@ -9,10 +8,13 @@ import java.nio.file.Paths;
 
 public class ScreenshotWatcher implements TestWatcher {
 
-    @Getter
     private static String lastScreenshotPath;
 
     private static final ThreadLocal<Page> pageHolder = new ThreadLocal<>();
+
+    public static String getLastScreenshotPath() {
+        return lastScreenshotPath;
+    }
 
     public static void setCurrentPage(Page page) {
         pageHolder.set(page);
